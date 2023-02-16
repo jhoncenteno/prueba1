@@ -1,0 +1,44 @@
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * The content below * * * * * * * * * * * -->
+<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
+<!-- * * * * * * * * * * and can be replaced. * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * Delete the template below * * * * * * * * * * -->
+<!-- * * * * * * * to get started with your project! * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+
+<!-- -------------ESTE ES EL HTML INICIAL. ---------------------------------------
+  -------------AQUI SE COLOCAN LOS SELECTORES DE CADA COMPONENTE ------------- -->
+
+<!-- ********************* HEADER ********************* -->
+<!--[nombre]="nombreEnOtroComponente" declara el nombre que se usara para referenciar una variable del .ts de ESTE COMPONENTE, en 
+OTRO COMPONENTE HIJO.-->
+<app-header [valorPrueba]="pruebaApp"></app-header>  <!-- Plasma el codigo del html del componente "header"-->
+<div><h1>Bienvenidos a {{title}} </h1></div>
+<!-- Se pueden plasmar variables con  {{nombre_variable}} creadas en el archivo ts de su correspondiente componente. 
+Aqui busca la variable "title" en app.component.ts -->
+
+<!-- ********************* CARD ********************* -->
+<div class="grid">
+  <!-- *ngFor="let i of []" sirve para repetir un bloque con un for loop-->
+  <!-- Ademas, [nombre]=i hace que tome el valor de la variable segun cada iteracion-->
+  <!-- Con [nombre] usamos el valor de esa variable en el componente card-->
+  <app-card *ngFor="let i of cards" [valorDeCards]="i"></app-card> 
+
+</div>
+
+<!-- ********************* SIDEBAR ********************* -->
+<app-sidebar></app-sidebar>
+
+<!-- ********************* APRUEBAS ********************* -->
+<app-apruebas></app-apruebas>
+
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * The content above * * * * * * * * * * * -->
+<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
+<!-- * * * * * * * * * * and can be replaced. * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * End of Placeholder * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+
+<router-outlet></router-outlet>

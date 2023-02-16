@@ -1,0 +1,28 @@
+<!-- OBTENIDO DEL REPOSITORIO-->
+<!--
+<div class="card">
+    <img appImagenRota [urlCustom]="'https://cdn9.josefacchin.com/wp-content/uploads/2018/09/http-not-found-error-404.png'" class="image" [src]="dataEntrante?.image" alt="">
+    <div class="wrapper-text">
+        <div class="title">{{dataEntrante?.title}}</div>
+        <div class="sub-title">{{dataEntrante?.subtitle}}</div>
+    </div>
+    <div class="pt-1">
+        <button class="favorite" (click)="agregarFavorito()">Add favorite</button>
+    </div>
+</div>
+-->
+
+<!-- EMPLEADO ACTUALMENTE-->
+<div class="card">
+    <!--"valorDecards hace referencia a una variable definida en app.component.ts"-->
+    <img class="image" [src]="valorDeCards.img" alt=""> <!--"image" es una variable que se define en cards.component.ts-->
+    <div class="wrapper-text">
+        <div class="title">{{valorDeCards.title}} </div>
+        <div class="sub-title">{{valorDeCards.subtitle}}</div>
+    </div>
+    <div>
+        <!-- (click) es un evento de angular que invoca al metodo especificado.
+        Aqui se invoca el metodo "agregarFavorito" (definido en .ts) al hacer click en el boton-->
+        <button class="favoritos" (click)="agregarFavorito()">Añadir a favoritos</button>
+    </div>
+</div>

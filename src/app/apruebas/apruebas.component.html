@@ -1,0 +1,26 @@
+
+<p>Nombre: {{propiedades.nombre}} </p>
+
+
+<p>Apellido: {{propiedades.apellido}} </p>
+ <!--              if edad>18 return "Si, tiene: edad+años" else return "No, tiene: edad+años"-->
+<p>Mayor de edad? {{propiedades.edad>18 ? "Si, tiene: "+propiedades.edad+"años" : "No, tiene: "+propiedades.edad+"años" }} </p>
+
+<div>   <!-- Para identificar este elemento (el input completo) y poder referenciarlo en otro-->
+    Intoruce la empresa: <input type="text" #identificadorDeInput>
+    <!--             el evento click se activa cada vez que hac click.        con .value, referencia al valor introducido en input-->
+    <input type="button" name="" id="" value="Enviar"  (click)="funcionIngresarEmpresa(identificadorDeInput.value)">
+    <br>
+    <p>Empresa: {{identificadorDeInput.value}} </p>
+</div>
+
+<div>               <!-- el evento keyup se activa cada vez que se levanta una tecla inmediatamente (por el 0)-->
+    Introduce cualquier cosa: <input type="text" #identificadorDeCosa (keyup)="0">
+    <p>La cosa es: {{identificadorDeCosa.value}} </p>
+</div>
+
+<div>                       <!-- Los [] se usan para que checked pueda agarrar el valor de la variable "registrado" -->
+    Registrado: <input type="checkbox" name="" id="registro" [checked]="registrado">
+</div>
+
+
