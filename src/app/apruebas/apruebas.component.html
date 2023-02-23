@@ -4,28 +4,34 @@
  <!--              if edad>18 return "Si, tiene: edad+años" else return "No, tiene: edad+años"-->
 <p>Mayor de edad? {{propiedades.edad>18 ? "Si, tiene: "+propiedades.edad+"años" : "No, tiene: "+propiedades.edad+"años" }} </p>
 
+<!--                                         EVENT BINDING Y PORPETY BINDING                                  -->
+<!-- Los eventos se pasan del html al ts y se usan ().       las porpiedades se pasan del ts al htm y se usan []. -->
 
-
-<div>   <!-- Para identificar este elemento (el input completo) y poder referenciarlo en otro-->
+<div>   <!-- el # es Para identificar este elemento (el input completo) y poder referenciarlo en otro-->
     Introduce la empresa: <input type="text" #identificadorDeInput>
     <br>
     <p>Empresa: {{identificadorDeInput.value}} </p>
 
     <!-- El evento click hace que se ejecute el metodo || con .value, referencia al valor introducido en input  -->
     <button (click)="metodoIngresarEmpresa(identificadorDeInput.value)">Aplicar empresa y reinicia propiedades</button>
+    <!-- Se pueden ver todos los eventos en: w3bai.com/es/angular/angular_events.html -->
 </div>
 
-<br><br><br>
-
-<div>               <!-- el evento keyup se activa cada vez que se levanta una tecla inmediatamente (por el 0)-->
-    Introduce cualquier cosa: <input type="text" #identificadorDeCosa (keyup)="0">
-    <p>La cosa es: {{identificadorDeCosa.value}} </p>
-</div>
+<br><br>
 
 <div>                       <!-- Los [] se usan para que checked pueda agarrar el valor de la variable "registrado" -->
-    Registrado: <input type="checkbox" name="" id="registro" [checked]="registrado">
+    Registrado: <input type="radio" value="si"  name="nRegistro" id="registro" [checked]="registrado" (click)="setUsuarioRegistrado($event)">
+    No Registrado: <input type="radio" value="no" name="nRegistro" id="registro" [checked]="registrado" (click)="setUsuarioRegistrado($event)">
+    <br>
+    {{textoRegistrado}}     
+</div>
+<br><br>
+<div> <!-- BIDING BIDIRECCIONAL. El valor de "empresa" tendra inicialmente el valo del ts pero cambiara tanto en el html como en el ts al modificarlo en input-->
+    <!-- En app module se debe importar "FormsModule" -->
+    Introduce cualquier cosa: <input type="text" [(ngModel)]="cosa">
+    <p>El valor de "cosa" ahora es: {{cosa}} </p>
 </div>
 
 
-<!-- PROBANDO UN TERCER COMMIT -->
+
 
