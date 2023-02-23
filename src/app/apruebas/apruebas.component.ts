@@ -14,6 +14,7 @@ export class ApruebasComponent implements OnInit {
   }
 
   registrado=true;
+  textoRegistrado = "Inicialmente, El usuario no esta registrado"
 
   constructor() {}
 
@@ -28,7 +29,7 @@ export class ApruebasComponent implements OnInit {
   }
 
   //Metodo que cambia el valor de "propiedades" al ejecutarse
-  cambiarPropiedades () {
+  cambiarPropiedades():void { //void indica que la funcion no retornara nada (no hay return)
     this.propiedades = {
       nombre: "Nombre nuevo",
       apellido: "Apellido nuevo",
@@ -36,8 +37,9 @@ export class ApruebasComponent implements OnInit {
     }
   }
 
-  //metodo que ejecuta otro metodo
-  metodoIngresarEmpresa(val:string) {
+  //metodo para ingresar un string de un input
+  //Simultaneamente sjecuta otro metodo
+  metodoIngresarEmpresa(val:string):void {
     // Usamos "this" ya que esta fuera de este metodo pero dentro de la clase
     this.cambiarPropiedades()
   };
@@ -48,5 +50,22 @@ export class ApruebasComponent implements OnInit {
 
   // ClaseImportada.metodoAlla()
   
+
+  setUsuarioRegistrado(Evento:Event) {
+    //event es un objeto con propiedades y metodos. La propiedad "target" nos indica el tipo del objeto
+    //alert(Evento.target)
+    
+    // Se debe usar esta sintaxis para referencia el valor de "value"
+    if ((<HTMLInputElement>Evento.target).value == "si") {
+      this.textoRegistrado = "El usuario ahora esta registrado"
+    } 
+    else {
+      this.textoRegistrado = "El usuario ahora no esta registrado"
+    }
+    
+  }
+
+  //Ejemplo de biding bidireccional con el valor de una variable
+  cosa = "Cosa inicial"
 }
  

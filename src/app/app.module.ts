@@ -9,6 +9,7 @@ import { CardComponent } from './card/card.component';
 import { HttpClientModule } from  '@angular/common/http';
 import { ApruebasComponent } from './apruebas/apruebas.component';
 import { ZplantillaComponent } from './zplantilla/zplantilla.component'; //IMPORTAMOS HttpClientModule
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { ZplantillaComponent } from './zplantilla/zplantilla.component'; //IMPOR
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule  //IMPORTAMOS HttpClientModule
+    HttpClientModule,  //IMPORTAMOS HttpClientModule
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
